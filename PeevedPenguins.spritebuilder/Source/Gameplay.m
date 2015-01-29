@@ -30,7 +30,7 @@
 }
 
 // called on every touch in this scene
--(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
+-(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
@@ -70,7 +70,7 @@
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
 }
 
-- (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
+- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
