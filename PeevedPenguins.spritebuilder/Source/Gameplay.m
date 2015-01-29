@@ -45,6 +45,7 @@
         // setup a spring joint between the mouseJointNode and the catapultArm
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
         // create a penguin from the ccb-file
+        
         _currentPenguin = [CCBReader load:@"Penguin"];
         // initially position it on the scoop. 34,138 is the position in the node space of the _catapultArm
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
@@ -98,6 +99,17 @@
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
         _mouseJoint = nil;
+        
+        // releases the joint and lets the penguin fly
+        [_penguinCatapultJoint invalidate];
+        _penguinCatapultJoint = nil;
+        
+        // after snapping rotation is fine
+        _currentPenguin.physicsBody.allowsRotation = TRUE;
+        
+        // follow the flying penguin
+        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:follow];
     }
 }
 
