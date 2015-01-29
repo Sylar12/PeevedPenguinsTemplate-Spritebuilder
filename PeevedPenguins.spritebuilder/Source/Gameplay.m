@@ -26,6 +26,8 @@
 // called on every touch in this scene
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     [self launchPenguin];
+    // visualize physics bodies & joints
+    _physicsNode.debugDraw = TRUE;
 }
 
 - (void)launchPenguin {
