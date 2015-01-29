@@ -119,8 +119,9 @@ static const float MIN_SPEED = 5.f;
         // follow the flying penguin
         _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
         [_contentNode runAction:_followPenguin];
+        _currentPenguin.launched = TRUE;
     }
-    _currentPenguin.launched = TRUE;
+    
 }
 
 -(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
