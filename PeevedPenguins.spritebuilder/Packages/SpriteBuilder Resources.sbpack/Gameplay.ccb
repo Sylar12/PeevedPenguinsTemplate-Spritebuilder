@@ -863,7 +863,7 @@
 										<key>type</key>
 										<string>CCBFile</string>
 										<key>value</key>
-										<string>Bear.ccb</string>
+										<string>Lancelot.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -944,6 +944,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2016,8 +2018,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
